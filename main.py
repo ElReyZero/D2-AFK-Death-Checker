@@ -42,11 +42,44 @@ def writeDeathEvent():
     keyboard.release(Key.alt)
     keyboard.release(Key.f4)
     #Shutting Down PC
-    time.sleep(10)
-    os.system("shutdown /s /t 1")
+    #time.sleep(10)
+    #os.system("shutdown /s /t 1")
 
+
+def chooseLanguage()->int:
+
+    #Endless loop until the user exits the program or chooses a language
+    choice = ""
+    answered = False
+    while not answered:
+        choice = input("Choose your language:\n1. Spanish\n2. English\n3.Exit\n")
+        try:
+            if int(choice) == 1:
+                print("Iniciando programa...")
+                answered = True
+                return 1
+            elif int(choice) == 2:
+                print("Starting program...")
+                answered = True
+                return 0
+            elif int(choice) == 3:
+                os.exit(1)
+            else:
+                print(choice + " is not a valid input.")
+        except:
+            print(choice + " is not a valid input.")
 
 def main():
+
+    #Language Selection
+    lang = chooseLanguage()
+
+    #Reading the screenshot of Light Fades Away according to the language
+    if lang == 1:
+        lightfades = cv2.imread("./img/luz.png")
+    else:
+        lightfades = cv2.imread("./img/light.png")
+
     method = cv2.TM_CCOEFF_NORMED
 
     #Read the images
@@ -80,7 +113,6 @@ def main():
             running = False
         else:
             #If deathsymbol is not found, we'll try to find the text "Your Light Fades Away"
-            lightfades = cv2.imread("./img/luz.png")
             result = cv2.matchTemplate(lightfades, screenshot, method)
             if np.any(result>0.99):
                 print("Lightfades was found in screenshot")

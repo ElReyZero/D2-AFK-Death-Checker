@@ -27,6 +27,7 @@ You can stop the script by closing it or pressing the "Esc" key. (For the time b
 ## Additional info
 
 * First time you run the script you might encounter an error asking you to install an additional module.
-* For the time being the light fades away image is in spanish. Will be corrected soonTM
+* It now works in english!!!
+* In-game resolution has to be 720p
 
 ## D2 TOOL MADE BY ELREYZERO
