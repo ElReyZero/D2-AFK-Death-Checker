@@ -42,8 +42,8 @@ def writeDeathEvent():
     keyboard.release(Key.alt)
     keyboard.release(Key.f4)
     #Shutting Down PC
-    #time.sleep(10)
-    #os.system("shutdown /s /t 1")
+    time.sleep(10)
+    os.system("shutdown /s /t 1")
 
 
 def chooseLanguage()->int:
