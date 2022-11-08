@@ -8,14 +8,9 @@ Right now it's intended for the void warlock + trinity ghoul xp farm.
 ## Usage
 First of all, this script uses some external python modules that can be obtained through pip.
 
-You need to go into a cmd console and type the next command:
-* pip install [module name]
+You need to go into a cmd console and type the next command to install the script dependencies:
+* pip install -r requirements.txt
 
-Modules needed:
-1. opencv-python
-2. pyautogui
-3. numpy
-4. pynput
 
 To run the script just open a cmd console on the AFK Checker folder and type:
 * python main.py
